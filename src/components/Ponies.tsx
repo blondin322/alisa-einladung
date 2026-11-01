@@ -16,10 +16,10 @@ export function Ponies({ className }: PoniesProps) {
           <stop offset="55%" stopColor="#eaf5fb" />
           <stop offset="100%" stopColor="#cfe6d8" />
         </linearGradient>
-        <linearGradient id="bayCoat" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#8a5a3c" />
-          <stop offset="45%" stopColor="#6f432b" />
-          <stop offset="100%" stopColor="#4f2f1d" />
+        <linearGradient id="blackCoat" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor="#3a3a3a" />
+          <stop offset="45%" stopColor="#1a1a1a" />
+          <stop offset="100%" stopColor="#0a0a0a" />
         </linearGradient>
         <linearGradient id="palominoCoat" x1="0" y1="0" x2="1" y2="1">
           <stop offset="0%" stopColor="#f0d7a8" />
@@ -42,9 +42,9 @@ export function Ponies({ className }: PoniesProps) {
 
       <Horse
         transform="translate(46 58) scale(1.08)"
-        coat="url(#bayCoat)"
-        mane="#2a1c14"
-        muzzle="#d7b09a"
+        coat="url(#blackCoat)"
+        mane="#111111"
+        muzzle="#c4a090"
         sock="#f4efe8"
       />
       <Horse

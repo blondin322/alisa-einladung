@@ -1,27 +1,17 @@
 export function Horseshoe({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 64 64" className={className} aria-hidden="true">
+      {/* Classic horseshoe: closed toe at top, open heels at bottom */}
       <path
-        d="M14 36c0-14 8-24 18-24s18 10 18 24v8a6 6 0 0 0 6 6"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="5"
-        strokeLinecap="round"
+        fill="currentColor"
+        d="M12 28c0-11.5 8.5-20 20-20s20 8.5 20 20v14a6 6 0 0 0 6 6h2v7h-2a13 13 0 0 1-13-13V28c0-7.7-6.3-14-14-14s-14 6.3-14 14v14a13 13 0 0 1-13 13H4v-7h2a6 6 0 0 0 6-6V28z"
       />
-      <path
-        d="M14 36v8a6 6 0 0 1-6 6"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="5"
-        strokeLinecap="round"
-      />
-      <path
-        d="M18 46v6M26 48v6M34 48v6M42 46v6"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="4"
-        strokeLinecap="round"
-      />
+      <circle cx="18" cy="32" r="2" fill="var(--color-cream, #f7fbff)" />
+      <circle cx="20" cy="40" r="2" fill="var(--color-cream, #f7fbff)" />
+      <circle cx="24" cy="47" r="2" fill="var(--color-cream, #f7fbff)" />
+      <circle cx="46" cy="32" r="2" fill="var(--color-cream, #f7fbff)" />
+      <circle cx="44" cy="40" r="2" fill="var(--color-cream, #f7fbff)" />
+      <circle cx="40" cy="47" r="2" fill="var(--color-cream, #f7fbff)" />
     </svg>
   )
 }
