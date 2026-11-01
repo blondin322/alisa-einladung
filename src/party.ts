@@ -1,5 +1,5 @@
 /** Адрес страницы внутри QR. Перед печатью замените на ссылку GitHub Pages. */
-export const siteUrl = 'https://example.github.io/alisa/'
+export const siteUrl = 'https://blondin322.github.io/alisa-einladung/'
 
 export const party = {
   childName: 'Alisa',
