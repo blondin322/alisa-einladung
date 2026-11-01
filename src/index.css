@@ -1,0 +1,74 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-display: 'Fraunces', 'Iowan Old Style', Palatino, serif;
+  --font-sans: 'Nunito', 'Avenir Next', sans-serif;
+  --color-cream: #fffaf3;
+  --color-ink: #3d291f;
+  --color-chestnut: #6b4334;
+  --color-meadow: #3f6b45;
+  --color-leaf: #e7f0df;
+  --color-hay: #f3e6c8;
+}
+
+html {
+  background: #e7f0df;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  background:
+    radial-gradient(ellipse 80% 50% at 10% -10%, #fff8ea 0%, transparent 55%),
+    radial-gradient(ellipse 60% 40% at 100% 0%, #f6e7c4 0%, transparent 50%),
+    linear-gradient(180deg, #f4f8ef 0%, #dcead4 100%);
+}
+
+.safe-center {
+  justify-content: safe center;
+}
+
+.print-sheet {
+  width: 105mm;
+  height: 148mm;
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+}
+
+@page {
+  size: A6 portrait;
+  margin: 0;
+}
+
+@media print {
+  html,
+  body {
+    background: white !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-stage {
+    display: block !important;
+    min-height: auto !important;
+    padding: 0 !important;
+  }
+
+  .print-sheet {
+    margin: 0 !important;
+    box-shadow: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
