@@ -18,7 +18,7 @@ export function Card() {
         <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
           <button
             type="button"
-            className="inline-flex min-h-11 cursor-pointer items-center justify-center rounded-full bg-meadow px-5 font-bold text-white hover:bg-[#345a3a] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-meadow"
+            className="inline-flex min-h-11 cursor-pointer items-center justify-center rounded-full bg-meadow px-5 font-bold text-white hover:bg-[#5a89a6] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-meadow"
             onClick={() => window.print()}
           >
             Drucken
@@ -32,7 +32,7 @@ export function Card() {
         </div>
       </div>
 
-      <article className="print-sheet flex flex-col items-center bg-cream px-[8mm] py-[8mm] text-center text-ink shadow-[0_24px_60px_rgba(61,41,31,0.14)]">
+      <article className="print-sheet flex flex-col items-center bg-cream px-[8mm] py-[8mm] text-center text-ink shadow-[0_24px_60px_rgba(36,59,85,0.14)]">
         <Horseshoe className="h-8 w-8 text-chestnut" />
         <p className="mt-2 text-[10px] font-bold tracking-[0.18em] text-meadow uppercase">
           Du bist eingeladen
@@ -52,7 +52,7 @@ export function Card() {
             level="Q"
             marginSize={1}
             bgColor="#ffffff"
-            fgColor="#3d291f"
+            fgColor="#243b55"
             title="QR-Code zur Einladung"
             style={{ width: '36mm', height: '36mm' }}
           />

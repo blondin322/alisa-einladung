@@ -7,10 +7,10 @@ export const party = {
   weekday: 'Samstag',
   dateLabel: '7. November 2026',
   timeLabel: '10:00–14:00 Uhr',
-  placeLine: 'Königsberger Straße',
+  placeLine: 'Königsberger Straße 12',
   placeTown: 'Germersheim',
   mapQuery: 'Königsberger Str. 12, 76726 Germersheim',
-  whatsappPhone: '4915153290040',
+  whatsappPhone: '4915207629290',
   whatsappName: 'Iryna',
   whatsappText:
     'Hallo Iryna, ich möchte zur Feier von Alisa am 7. November kommen.',

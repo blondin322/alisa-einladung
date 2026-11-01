@@ -5,7 +5,7 @@ import { mapHref, party, whatsappHref } from '../party.ts'
 export function Invitation() {
   return (
     <main className="safe-center mx-auto flex min-h-dvh w-full max-w-md flex-col px-4 py-8 sm:py-12">
-      <article className="relative overflow-hidden rounded-[2rem] bg-cream shadow-[0_24px_60px_rgba(61,41,31,0.14)]">
+      <article className="relative overflow-hidden rounded-[2rem] bg-cream shadow-[0_24px_60px_rgba(36,59,85,0.14)]">
         <div className="pointer-events-none absolute inset-3 rounded-[1.45rem] border border-chestnut/15" />
         <Ponies className="block w-full" />
         <div className="relative px-6 pb-8 pt-6 text-center sm:px-8">
@@ -45,7 +45,7 @@ export function Invitation() {
 
           <div className="mt-7 flex flex-col gap-3">
             <a
-              className="inline-flex min-h-12 items-center justify-center rounded-full bg-meadow px-5 py-3 text-center text-base font-bold text-white shadow-sm transition hover:bg-[#345a3a] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-meadow"
+              className="inline-flex min-h-12 items-center justify-center rounded-full bg-meadow px-5 py-3 text-center text-base font-bold text-white shadow-sm transition hover:bg-[#5a89a6] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-meadow"
               href={mapHref()}
               target="_blank"
               rel="noopener noreferrer"
@@ -58,19 +58,11 @@ export function Invitation() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              {party.whatsappName} über WhatsApp schreiben
+              Per WhatsApp schreiben
             </a>
           </div>
 
           <p className="mt-8 font-display text-xl italic text-chestnut">Wir freuen uns auf dich.</p>
-          <p className="no-print mt-6 text-sm">
-            <a
-              className="font-semibold text-chestnut underline decoration-chestnut/30 underline-offset-4 hover:decoration-chestnut"
-              href="karte/"
-            >
-              Karte drucken
-            </a>
-          </p>
         </div>
       </article>
     </main>
