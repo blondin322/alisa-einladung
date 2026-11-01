@@ -13,7 +13,7 @@ export const party = {
   whatsappPhone: '4915207629290',
   whatsappName: 'Iryna',
   whatsappText:
-    'Hi Alisa, ich möchte gernezur Feier kommen.',
+    'Hi Alisa, ich möchte gerne zur Feier kommen.',
   siteUrl,
 } as const
 
