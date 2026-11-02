@@ -24,6 +24,7 @@ export default defineConfig({
       input: {
         main: resolve(root, 'index.html'),
         karte: resolve(root, 'karte/index.html'),
+        bogen: resolve(root, 'karte/bogen/index.html'),
       },
     },
   },

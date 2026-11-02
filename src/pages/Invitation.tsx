@@ -85,7 +85,7 @@ export function Invitation() {
                 </a>
               </div>
 
-              <p className="mt-9 font-script text-4xl text-rose">Wir freuen uns auf dich</p>
+              <p className="mt-9 font-script text-4xl text-rose">Ich freue mich auf dich!</p>
             </div>
           </article>
         </main>

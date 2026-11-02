@@ -173,15 +173,133 @@ body {
   }
 }
 
-.print-sheet {
-  width: 105mm;
-  height: 148mm;
+.qr-sticker {
+  box-sizing: border-box;
+  display: flex;
+  width: 50mm;
+  height: 50mm;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3.2mm 2.5mm 2.8mm;
+  text-align: center;
+  color: #1a1038;
+  background: #fffaf6;
+  border: 0.45mm solid #d4b56a;
   print-color-adjust: exact;
   -webkit-print-color-adjust: exact;
 }
 
+.qr-sticker-large {
+  width: 55mm;
+  height: 58mm;
+  padding: 4mm 3mm 3.2mm;
+}
+
+.qr-sticker-head {
+  line-height: 1;
+}
+
+.qr-sticker-name {
+  margin: 0;
+  font-family: var(--font-script);
+  font-size: 9.5mm;
+  line-height: 0.85;
+  color: #6b3fa0;
+}
+
+.qr-sticker-large .qr-sticker-name {
+  font-size: 11mm;
+}
+
+.qr-sticker-age {
+  margin: 0.4mm 0 0;
+  font-family: var(--font-caps);
+  font-size: 2.6mm;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #c9a24a;
+}
+
+.qr-sticker-large .qr-sticker-age {
+  font-size: 3mm;
+}
+
+.qr-sticker-code {
+  display: grid;
+  place-items: center;
+  padding: 1mm;
+  background: #ffffff;
+  border-radius: 1.5mm;
+}
+
+.qr-sticker-hint {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 2.4mm;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #5d4a78;
+}
+
+.qr-sticker-large .qr-sticker-hint {
+  font-size: 2.8mm;
+}
+
+.photo-sheet {
+  box-sizing: border-box;
+  display: grid;
+  width: 100mm;
+  height: 150mm;
+  grid-template-columns: repeat(2, 50mm);
+  grid-template-rows: repeat(3, 50mm);
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 18px 40px rgba(26, 16, 56, 0.16);
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+}
+
+.photo-cell {
+  box-sizing: border-box;
+  display: grid;
+  place-items: center;
+  border-right: 0.3mm dashed #cbb8e6;
+  border-bottom: 0.3mm dashed #cbb8e6;
+}
+
+.photo-cell:nth-child(2n) {
+  border-right: none;
+}
+
+.photo-cell:nth-child(n + 5) {
+  border-bottom: none;
+}
+
+.photo-cell .qr-sticker {
+  border-color: #d4b56a;
+}
+
+.print-sticker-page {
+  page: sticker;
+}
+
+.print-photo-page {
+  page: photo;
+}
+
+@page sticker {
+  size: 55mm 58mm;
+  margin: 0;
+}
+
+@page photo {
+  size: 100mm 150mm;
+  margin: 0;
+}
+
 @page {
-  size: A6 portrait;
   margin: 0;
 }
 
@@ -199,11 +317,17 @@ body {
     display: block !important;
     min-height: auto !important;
     padding: 0 !important;
+    margin: 0 !important;
   }
 
-  .print-sheet {
+  .qr-sticker,
+  .photo-sheet {
     margin: 0 !important;
     box-shadow: none !important;
+  }
+
+  .photo-cell {
+    border-color: #b7a2d6;
   }
 }
 
