@@ -9,6 +9,15 @@
   --color-meadow: #6b9bb8;
   --color-leaf: #e8f3fa;
   --color-hay: #d7e8f4;
+  --font-script: 'Great Vibes', 'Snell Roundhand', cursive;
+  --font-caps: 'Cinzel', 'Trajan Pro', Georgia, serif;
+  --color-night: #1a1038;
+  --color-plum: #22154b;
+  --color-gold: #f4bb55;
+  --color-gold-soft: #f7d58e;
+  --color-moon: #fbf4ff;
+  --color-lilac: #d9c8f5;
+  --color-rose: #ffb3d6;
 }
 
 html {
@@ -28,6 +37,139 @@ body {
 
 .safe-center {
   justify-content: safe center;
+}
+
+.magic-page {
+  color: var(--color-moon);
+  background:
+    radial-gradient(ellipse 90% 60% at 50% -10%, rgba(255, 170, 210, 0.35) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 50% at 100% 100%, rgba(120, 90, 220, 0.45) 0%, transparent 60%),
+    linear-gradient(180deg, #2b1b57 0%, #1c1240 55%, #120b2c 100%);
+}
+
+.magic-card {
+  background: linear-gradient(180deg, #3a2470 0%, #2c1b5e 45%, #22154b 100%);
+  border: 1px solid rgba(255, 214, 128, 0.35);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.04) inset,
+    0 30px 80px rgba(8, 4, 30, 0.6),
+    0 0 60px rgba(255, 170, 220, 0.18);
+}
+
+.magic-name {
+  background: linear-gradient(
+    100deg,
+    #f6c86b 0%,
+    #fff3c9 22%,
+    #f2b04a 40%,
+    #ffd9f0 55%,
+    #f6c86b 72%,
+    #fff3c9 100%
+  );
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 2px 14px rgba(255, 196, 110, 0.45));
+  animation: magic-shimmer 4.5s ease-in-out infinite;
+}
+
+.magic-button-gold {
+  background: linear-gradient(180deg, #ffe3a1 0%, #f4bb55 55%, #e59a35 100%);
+  box-shadow:
+    0 8px 24px rgba(244, 187, 85, 0.35),
+    0 1px 0 rgba(255, 255, 255, 0.6) inset;
+}
+
+.magic-button-gold:hover {
+  filter: brightness(1.06);
+}
+
+.magic-intro {
+  transition: opacity 800ms ease;
+}
+
+.magic-intro-leave {
+  opacity: 0;
+}
+
+.magic-intro-art {
+  transform-origin: 50% 70%;
+  animation: magic-camera 5.4s cubic-bezier(0.25, 0.1, 0.25, 1) both;
+}
+
+.magic-intro-flash {
+  background: radial-gradient(circle at 50% 30%, rgba(255, 240, 200, 0.9), transparent 55%);
+  opacity: 0;
+  animation: magic-flash 1.6s ease-out 1.9s both;
+}
+
+.magic-intro-title {
+  animation: magic-title 1.4s cubic-bezier(0.2, 0.8, 0.25, 1) 1.9s both;
+}
+
+.card-enter {
+  animation: card-enter 900ms cubic-bezier(0.2, 0.8, 0.3, 1) both;
+}
+
+@keyframes magic-shimmer {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes magic-camera {
+  from {
+    transform: scale(1.22) translateY(4%);
+    filter: brightness(0.55) saturate(0.8);
+  }
+  35% {
+    filter: brightness(1) saturate(1.05);
+  }
+  to {
+    transform: scale(1.04) translateY(0);
+    filter: brightness(1.05) saturate(1.1);
+  }
+}
+
+@keyframes magic-flash {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes magic-title {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.92);
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+
+@keyframes card-enter {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .print-sheet {
