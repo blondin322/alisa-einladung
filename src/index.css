@@ -72,6 +72,7 @@ body {
   color: transparent;
   filter: drop-shadow(0 2px 14px rgba(255, 196, 110, 0.45));
   animation: magic-shimmer 4.5s ease-in-out infinite;
+  padding-top: 1rem;
 }
 
 .magic-button-gold {
