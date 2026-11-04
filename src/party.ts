@@ -16,8 +16,7 @@ export const party = {
   whatsappPhone: '4915207629290',
   whatsappName: 'Iryna',
   whatsappText: 'Hi Alisa, ich möchte gerne zur Feier kommen.',
-  adultsWhatsappText:
-    'Hallo Iryna, ich möchte gerne abends zur Feier von Alisa um 17:00 kommen.',
+  adultsWhatsappText: 'Hi Alisa, ich möchte gerne abends zur Feier kommen.',
   siteUrl,
 } as const
 
@@ -78,9 +77,9 @@ export function invitationCopy(guest: Guest | null) {
 export function adultsWhatsappTextFor(guest: Guest | null) {
   if (!guest) return party.adultsWhatsappText
   if (guest.form === 'plural') {
-    return `Hallo Iryna, hier schreiben ${guest.names}. Wir möchten gerne abends zur Feier von Alisa um 17:00 kommen.`
+    return `Hi Alisa, hier sind ${guest.names}. Wir möchten gerne abends zur Feier kommen.`
   }
-  return `Hallo Iryna, hier ist ${guest.names}. Ich möchte gerne abends zur Feier von Alisa um 17:00 kommen.`
+  return `Hi Alisa, hier ist ${guest.names}. Ich möchte gerne abends zur Feier kommen.`
 }
 
 export function mapHref() {
