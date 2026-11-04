@@ -1,11 +1,39 @@
-import { useCallback, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import { MagicIntro } from '../components/MagicIntro.tsx'
 import { Sparkles } from '../components/Sparkles.tsx'
-import { mapHref, party, whatsappHref } from '../party.ts'
+import {
+  adultsWhatsappTextFor,
+  getGuestIdFromSearch,
+  guests,
+  invitationCopy,
+  mapHref,
+  party,
+  whatsappHref,
+} from '../party.ts'
 
-export function Invitation() {
+type InvitationProps = {
+  /** Overrides the default kids party time. */
+  timeLabel?: string
+  whatsappText?: string
+  /** When true, WhatsApp text follows the personalized guest. */
+  adultsMode?: boolean
+}
+
+export function Invitation({
+  timeLabel = party.timeLabel,
+  whatsappText = party.whatsappText,
+  adultsMode = false,
+}: InvitationProps) {
   const [introDone, setIntroDone] = useState(false)
   const finishIntro = useCallback(() => setIntroDone(true), [])
+
+  const guest = useMemo(() => {
+    const id = getGuestIdFromSearch()
+    return id ? guests[id] : null
+  }, [])
+
+  const copy = invitationCopy(guest)
+  const waText = adultsMode ? adultsWhatsappTextFor(guest) : whatsappText
 
   return (
     <div className="magic-page relative min-h-dvh overflow-hidden">
@@ -27,8 +55,15 @@ export function Invitation() {
             </div>
 
             <div className="relative -mt-8 px-6 pb-9 text-center sm:px-8">
-              <p className="font-caps text-[0.7rem] tracking-[0.42em] text-gold-soft uppercase [text-shadow:0_1px_8px_rgba(20,10,50,0.9)]">
-                Du bist eingeladen
+              {copy.salutation ? (
+                <p className="font-caps text-[0.8rem] tracking-[0.12em] text-gold-soft [text-shadow:0_1px_8px_rgba(20,10,50,0.9)]">
+                  {copy.salutation}
+                </p>
+              ) : null}
+              <p
+                className={`font-caps text-[0.7rem] tracking-[0.42em] text-gold-soft uppercase [text-shadow:0_1px_8px_rgba(20,10,50,0.9)] ${copy.salutation ? 'mt-2' : ''}`}
+              >
+                {copy.inviteLine}
               </p>
               <h1 className="mt-1">
                 <span className="magic-name block font-script text-[5.5rem] leading-[1.1]">
@@ -50,7 +85,7 @@ export function Invitation() {
                   <dd className="mt-2 text-moon">
                     <span className="block font-caps text-xl tracking-wide">{party.weekday}</span>
                     <span className="block font-caps text-2xl tracking-wide">{party.dateLabel}</span>
-                    <span className="mt-1 block text-lg font-semibold text-rose">{party.timeLabel}</span>
+                    <span className="mt-1 block text-lg font-semibold text-rose">{timeLabel}</span>
                   </dd>
                 </div>
                 <div>
@@ -77,7 +112,7 @@ export function Invitation() {
                 </a>
                 <a
                   className="inline-flex min-h-12 items-center justify-center rounded-full border border-rose/60 bg-white/5 px-5 py-3 text-center text-base font-bold text-moon backdrop-blur transition hover:bg-rose/15 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose"
-                  href={whatsappHref()}
+                  href={whatsappHref(waText)}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -85,7 +120,7 @@ export function Invitation() {
                 </a>
               </div>
 
-              <p className="mt-9 font-script text-4xl text-rose">Ich freue mich auf dich!</p>
+              <p className="mt-9 font-script text-4xl text-rose">{copy.closing}</p>
             </div>
           </article>
         </main>

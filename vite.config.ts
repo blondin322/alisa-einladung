@@ -25,6 +25,7 @@ export default defineConfig({
         main: resolve(root, 'index.html'),
         karte: resolve(root, 'karte/index.html'),
         bogen: resolve(root, 'karte/bogen/index.html'),
+        erwachsene: resolve(root, 'erwachsene/index.html'),
       },
     },
   },
