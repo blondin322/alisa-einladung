@@ -6,8 +6,10 @@ import { defineConfig } from 'vite'
 
 const root = dirname(fileURLToPath(import.meta.url))
 
-export default defineConfig({
-  base: './',
+export default defineConfig(({ command }) => ({
+  // Absolute base so nested pages (/erwachsene/, /karte/) load public images
+  // from the site root. Relative "./" resolves against the page URL and 404s.
+  base: command === 'build' ? '/alisa-einladung/' : '/',
   plugins: [react(), tailwindcss()],
   server: {
     host: '0.0.0.0',
@@ -29,4 +31,4 @@ export default defineConfig({
       },
     },
   },
-})
+}))
